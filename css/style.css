@@ -928,7 +928,7 @@ form{
         grid-template-columns: repeat(2,2fr);
     }
     .blog-icon{
-        padding-left: 20%;
+        padding-left: 2%;
     }
     #brand{
         width: 88%;
@@ -941,7 +941,7 @@ form{
         grid-template-columns: repeat(2, 1fr);
     }
     .footer-bg{
-        height: 170vh;
+        height: 140vh;
     }
     .foot-picbox img{
         width: 96%;
