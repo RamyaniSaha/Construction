@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home-style.css">
 </head>
 <body>
-    <header>
+   <header>
         <section casss="container">
-          <nav>
+          <nav class="nav-1">
              <div class="navbox">
                  <ul class="nav">
                      <span1><li><i class="fa-regular fa-clock"></i><span>7.30 AM - 9.30 PM</span></li></span1>
@@ -30,34 +30,40 @@
                  </ul>
              </div>
           </nav>
-           <nav>
-             <div class="box">
-                <div class="logo">
+           <nav class="header"> 
+              <div class="box">
+
+                   <div class="logo">
                      <a href=""><img src="images/logo-dark.webp"></a>
+                    </div>
+
+                    <div class="nav-slider">
+
+                       <button class="nav-arrow left">
+                           <i class="fa-solid fa-angle-left"></i>
+                       </button>
+
+                       <ul class="navbx">
+                           <li><a href="" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                           <li><a href="./about.html"><i class="fa-solid fa-user"></i> About</a></li>
+                           <li><a href=""><i class="fa-solid fa-gear"></i> Service</a></li>
+                           <li><a href="project"><i class="fa-solid fa-briefcase"></i> Project</a></li>
+                           <li><a href="#latest-blog"><i class="fa-solid fa-blog"></i> Blog</a></li>
+                           <li><a href=""><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                      </ul>
+
+                        <button class="nav-arrow right">
+                          <i class="fa-solid fa-angle-right"></i>
+                       </button>
+
+                   </div>
+
                 </div>
-                 <ul class="navbx">
-                     <li><a href="">Home</a></li>
-                     <li><a href="">About</a></li>
-                     <li><a href="">Service</a></li>
-                     <li><a href="project">Project</a></li>
-                     <li><a href="">Blog</a></li>
-                     <li><a href="">Contact</a></li>
-                 </ul>
-                
-                 <div class="toggle">
-                     <span>
-                         <i class="fa-solid fa-magnifying-glass"></i>
-                         <i class="fa-solid fa-cart-shopping"><span1>3</span1></i>
-                         <i class="fa-solid fa-bars"></i>
-                     </span>
-                 </div>
-             </div>
-           </nav>
+          </nav>
       </section>
-      <div id="nav-position"></div>
    </header>
-   <!--banner starts here-->
-     <div class="banner">
+<!--banner starts here-->
+    <div class="banner">
         <div class="owl-carousel owl-theme owl-banner">
             <div class="item">
                 <div class="img-box img-box1">
@@ -87,8 +93,8 @@
                     </div>
                 </div>
             </div>
-     </div>
-     <!--banner ends here-->
+    </div>
+<!--banner ends here-->
   <!--middle starts  here-->
   <section id="middle">
     <div class="pic-box">
@@ -550,7 +556,7 @@
     </section>
     <!--brand ends here-->
     <!--footer starts here-->
-    <footer>
+  <footer>
         <div class="footer-bg">
             <div class="footer-overlay">
                 <div class="footer-box">
@@ -641,7 +647,7 @@
   </footer>
   <!--footer ends here-->
     <button onclick="backToTop()" id="totop"><i class="fa-solid fa-chevron-up"></i></button>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="owlcarousel/dist/owl.carousel.min.js"></script>
@@ -649,18 +655,66 @@
 
     <script>
       $(document).ready(function(){
-        let navbar = $(".box");
-        let stickyPoint = navbar.offset().top;
 
-        $(window).on("scroll",function(){
-          if ($(window).scrollTop() > stickyPoint){
-            navbar.addClass("sticky");
-          } else {
-            navbar.removeClass("sticky");
+          let lastScrollTop = 0;
+
+         $(window).scroll(function(){
+         let scrollTop = $(this).scrollTop();
+
+         if(scrollTop > 80 && scrollTop > lastScrollTop){
+              $("nav").addClass("sticky").removeClass("unsticky");
+           }
+         else if(scrollTop < lastScrollTop){
+             if(scrollTop <= 80){
+                 $("nav").removeClass("sticky").addClass("unsticky");
+                 setTimeout(function(){
+                 $("nav").removeClass("unsticky");
+               }, 400);
+            }
           }
+
+          lastScrollTop = scrollTop;
+          });
+
         });
-      });
-    </script>
+   </script>
+
+   <script>
+     $(document).ready(function(){
+
+         // Right arrow scroll
+           $(".nav-arrow.right").click(function(){
+                 $(".navbx").animate({
+                  scrollLeft: $(".navbx").scrollLeft() + 200
+                }, 400);
+           });
+
+          // Left arrow scroll
+         $(".nav-arrow.left").click(function(){
+              $(".navbx").animate({
+                  scrollLeft: $(".navbx").scrollLeft() - 200
+                }, 400);
+           });
+
+         // Active tab + auto center animation
+          $(".navbx li a").click(function(e){
+             $(".navbx li a").removeClass("active");
+             $(this).addClass("active");
+
+             let navContainer = $(".navbx");
+             let selected = $(this);
+
+             let offsetLeft = selected.position().left;
+             let containerWidth = navContainer.width();
+             let selectedWidth = selected.outerWidth();
+
+              navContainer.animate({
+                 scrollLeft: navContainer.scrollLeft() + offsetLeft - (containerWidth / 2) + (selectedWidth / 2)
+                }, 500);
+           });
+
+       });
+   </script>
 
     <script>
         $(document).ready(function () {
@@ -674,7 +728,7 @@
              animateOut: 'animate__rollOut',
              animateIn: 'animate__rotateInDownLeft',
              autoplayHoverPause: true,
-             navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+             navText : ['<i class="icon-left fa fa-angle-left" aria-hidden="true"></i>','<i class="icon-right fa fa-angle-right" aria-hidden="true"></i>'],
              responsive:{
                0:{
                  items:1
@@ -692,7 +746,7 @@
                    margin: 0,
                    nav: true,
                    dots:  false,
-                   navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                   navText : ['<i class="icon-left fa fa-angle-left" aria-hidden="true"></i>','<i class="icon-right fa fa-angle-right" aria-hidden="true"></i>'],
                    responsive:{
                          0: {
                                items:1

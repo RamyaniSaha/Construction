@@ -59,106 +59,198 @@
        color: rgba(255, 166, 0, 0.911);
        cursor: pointer;
    }
-   
-   .box{
-       display: flex;
-       justify-content: space-between;
-       padding: 30px 0;
-   }
-   
-   .logo{
-       padding-left: 80px;
-   }
-   
-   .navbx{
-       padding-top: 13px;
-       padding-right: 70px;
-   }
-   .navbx li{
-       display: inline;
-       padding: 18px;
-   }   
-   nav li a{
-       position: relative;
-       text-decoration: none;
-       font-size: 17px;
-       font-weight: 600;
-       color: black;
-   }
-   nav li a::before{
-       position: absolute;
-       content: "";
-       width: 0;
-       height: 4px;
-       background-color: orange;
-       transition: 1s ease;
-       left: 0;
-       bottom: -20px;
-   }
-   nav li a:hover::before{
-       width: 100%;
-   }
-   .navbx i{
-       padding-left: 20px;
-       position: relative;
-       font-size: 18px;
-   }
-   .navbx span{
-       position: absolute;
-       font-size: 12px;
-       font-weight: 800;
-       border: 2px solid rgba(255, 166, 0, 0.877);
-       background-color: rgba(255, 166, 0, 0.856);
-       padding: 6px;
-       top: 15%;
-       right: 60px;
-       border-radius: 50%;
-   }
-   .navbx i:hover{
-       cursor: pointer;
-   }
-   .toggle{
-       display: none;
-       padding-right: 88px;
-       padding-top: 13px;
-   }
-   .toggle span i{
-       position: relative;
-       padding: 0 10px;
-       font-size: 18px;
-   }
-   .toggle span i span1{
-       position: absolute;
-       font-size: 9px;
-       font-weight: 800;
-       border: 2px solid rgba(255, 166, 0, 0.877);
-       background-color: rgba(255, 166, 0, 0.856);
-       padding: 4px;
-       top: -10px;
-       right: 0;
-       border-radius: 10px;
-   }
-   .toggle span:hover{
-       cursor: pointer;
-   }
-   .sticky{
-     position: fixed !important;
-     top: 0;
-     left: 0;
-     padding-top: 0;
-     z-index: 9999 !important;
-     background-color: white;
+   .header {
+      width: 100%;
+      position: relative;
+      transition: 0.4s ease;
+      padding: 0 2.2em;
+    }
+
+    /* Sticky class (will be added by jQuery) */
+    .header.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.12);
+
+      animation: navSlideDown 0.5s ease;
+      z-index: 99999;
+    }
+
+    .header.unsticky {
+       animation: slideUp 0.45s ease;
+    }
+
+    
+.box {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 14px 0; /* not wide */
+  gap: 18em;
+}
+
+.logo img {
+  width: 148px;
+}
+
+/* =============================
+   NAV SLIDER WRAPPER
+============================= */
+.nav-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* =============================
+   UL NAV SCROLLABLE AREA
+============================= */
+.navbx {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  padding: 8px 4px;
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.445);
+
+  max-width: 600px;
+  height: auto;
+}
+
+/* Hide scrollbar */
+.navbx::-webkit-scrollbar {
+  display: none;
+}
+
+/* =============================
+   NAV LINKS (Punch Buttons)
+============================= */
+.navbx li a {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 40px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+
+  white-space: nowrap;
+
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  transition: 0.35s ease;
+}
+
+/* Hover animation */
+.navbx li a:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Active button */
+.navbx li a.active {
+  background: linear-gradient(135deg, rgb(255, 172, 17), rgb(252, 188, 70));
+  color: white;
+  border: none;
+  box-shadow: 0px 6px 10px rgba(50, 50, 50, 0.258);
+}
+
+/* =============================
+   ARROWS BESIDE UL
+============================= */
+.nav-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.445);
+
+  transition: 0.3s ease;
+}
+
+.nav-arrow:hover{
+  transform: scale(1.08);
+  background: rgb(252, 188, 70);
+}
+
+.nav-arrow i {
+  font-size: 16px;
+  color: #111;
+  transition: 0.3s ease;
+}
+
+.nav-arrow:hover i{
+  color: white;
+}
+
+.nav-slider-wrapper.active-menu {
+  animation: popMenu 0.4s ease;
+}
+
+
+
+
+   .banner{
      width: 100%;
+     height: auto;
+     overflow: hidden;
    }
+
+  /* Owl Banner Full Screen */
+  .owl-banner .item{
+      width: 100%;
+      height: auto;
+    }
  
    .img-box{
     width: 100%;
-    height: 90vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: antiquewhite;
+    min-height: 100vh; /* responsive full height */
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    background-color: antiquewhite;
 }
 .img-box1{
     background-image: url("../images/hero-1.webp");
@@ -167,10 +259,13 @@
     background-image: url("../images/hero-2.webp");
 }
 .overlay{
-    width: 100%;
-    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.596);
+    z-index: 1;
 }
 .banner .owl-item.active .img-box .textbox h2{
     animation: fadeInDownBig ease 2s both;
@@ -184,9 +279,12 @@
     animation: slideInUp ease 2s 2s both;
 }
 .textbox{
-    position: absolute;
-    top: 12%;
-    left: 4%;
+    margin: auto 2.8em;
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    padding: 50px 0;
     line-height: 28px;
 }
 .textbox h2{
@@ -198,15 +296,12 @@
 .textbox h1{
     padding-bottom: 16px;
     font-size: 60px;
-    color: white;
-    font-family: "Oswald", sans-serif;
 }
 .textbox p{
     position: absolute;
     top: 42%;
-    width: 120%;
+    max-width: 600px;
     font-size: 16px;
-    color: white;
     font-family: "Open sans", sans-serif;
 }
 .banner .owl-item.active .img-box .banner-bttn{
@@ -267,7 +362,7 @@
     visibility: visible;
 }
 
-.fa-angle-left, .fa-angle-right{
+.icon-left, .icon-right{
     display: block;
     margin: 0 auto;
     padding: 8px 14px;
@@ -277,7 +372,7 @@
     color: rgb(252, 188, 70);
 }
 
-.fa-angle-left:hover, .fa-angle-right:hover{
+.icon-left:hover, .icon-right:hover{
     background-color: rgb(252, 188, 70);
     color: white;
 }
@@ -496,16 +591,24 @@
 }
 
 #details{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
     padding-top: 80px;
 }
 .details-picbox{
     width: 100%;
-    height: 50vh;
-    position: relative;
+    height: auto;
+    min-height: 350px;  /* keeps good height on desktop */
     background-image: url("../images/hero-2.webp");
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    align-items: center;
+
+    padding: 80px 0; /* main height controller */
     align-content: center;
     overflow: hidden;
 }
@@ -514,13 +617,21 @@
     height: 100%;
     position: absolute;
     top: 0;
+    left: 0;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.767);
 }
 .details-iconbox{
-   position: relative;
-   display: flex;
-   justify-content: space-evenly;
-   gap: 4%;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4%;
 }
 .icon, .icon2, .icon3, .icon4{
     width: 20%;
@@ -748,10 +859,10 @@
     font-weight: 400;
     font-family: "Open Sans", sans-serif;
 }
-.client-statement .item img{
+.owl-carousel-content img{
    display: block;
    margin: 2em auto;
-   width: 8%;
+   width: 8% !important;
    border-radius: 50%;
 }
 
@@ -833,42 +944,65 @@
 footer{
     width: 100%;
     height: auto;
+    overflow: hidden;
     padding-top: 80px;
 }
 .footer-bg{
-    width: auto;
-    height: 75vh;
+    width: 100%;
+    height: auto;
     background-image: url("../images/footer-bg.webp");
-    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .footer-overlay{
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.836);
+    padding: 68px 0 20px 0;  /* controls footer height */
 }
-
 
 .footer-box{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* makes responsive automatically */
+    justify-content: space-between;
+    gap: 30px;
     color: white;
-    padding: 5% 3% 0 3%;
-    column-gap: 40px;
 }
-.foot-box1 h4{
-   font-size: 24px;
-   line-height: 40px;
-   padding-bottom: 18px;
-   font-family: "Oswald", sans-serif;
+
+/* All Footer Columns */
+.footer-box > div{
+    flex: 1 1 220px; /* responsive magic */
+    min-width: 220px;
 }
-.foot-box1 p{
+
+.footer-box h4{
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+}
+
+.footer-box h4::after{
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+.footer-box p{
     font-size: 15px;
     line-height: 26px;
     color: #d8d8d8;
     font-family: "Open Sans", sans-serif;
 }
+
 .foot-box1 ul{
     padding-left: 0;
 }
@@ -886,12 +1020,6 @@ footer{
     transition: 0.5s ease;
 }
 
-.foot-box2 h4{
-    font-size: 24px;
-    line-height: 40px;
-    padding-bottom: 18px;
-    font-family: "Oswald", sans-serif;
-}
 .Contact-icon{
     color: #d8d8d8 !important;
     padding-left: 0;
@@ -915,66 +1043,83 @@ footer{
     cursor: pointer;
     transition: 0.5s ease;
 }
-.foot-box3 h4{
-    font-size: 24px;
-    line-height: 40px;
-    padding-bottom: 18px;
-    font-family: "Oswald", sans-serif;
-}
+
 .foot-picbox{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    position: relative;
     gap: 10px;
 }
-.foot-picbox img{
-    width: 100%;
-    height: 14vh;
-}
-.foot-picbox i{
-   position: absolute;
-   padding: 36px 36px 26px 36px;
-   list-style: none;
-   opacity: 0;
-}
-.foot-picbox i:hover{
-    width: 30.5%;
-    background-color: rgba(39, 39, 39, 0.623);
-    position: absolute;
-    opacity: 1;
-    color: rgb(252, 188, 70);
-    transition: 0.4s ease-in;
-    cursor: pointer;
+
+.foot-picbox div{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-.foot-box4 h4{
-    font-size: 24px;
-    line-height: 40px;
-    padding-bottom: 18px;
-    font-family: "Oswald", sans-serif;
+.foot-picbox img{
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
 }
-.foot-box4 p{
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #d8d8d8;
-    font-family: "Open Sans", sans-serif;
+.foot-picbox div:hover img{
+    transform: scale(1.1);
+}
+
+.foot-picbox i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: rgb(252, 188, 70);
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 2;
+}
+.foot-picbox div:hover i{
+   background-color: rgba(39, 39, 39, 0.623);
+   padding: 10em;
+   opacity: 1;
+   cursor: pointer;
+}
+.foot-box1 h4::after{
+    content: "";
+    width: 82px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+.foot-box3 h4::after{
+    content: "";
+    width: 140px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
 }
 
 form{
-    margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
 }
 .form1 input{
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    font-size: 14px;
     border: 1px solid rgba(117, 117, 117, 0.993);
     background-color: transparent;
     line-height: 24px;
-    padding: 10.5px 20px;
-    padding-right: 40px;
-    font-size: 14px;
     font-weight: 400;
-    position: relative;
     outline: none;
     color: white;
 }
@@ -994,12 +1139,16 @@ form{
     cursor: pointer;
 }
 .footer-margin{
-    margin-top: 4%;
+    width: 100%;
+    margin-top: 50px;
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
 }
 .footer-copyright{
-    padding-top: 1%;
+    width: 90%;
+    margin: auto;
+    text-align: center;
 }
 .foot-text p{
     font-size: 15px;
@@ -1029,15 +1178,56 @@ form{
     z-index: 9999;
 }
 
+#totop:hover{
+  background-color: #fab702;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* Slide down animation */
+@keyframes navSlideDown {
+  from {
+     transform: translateY(-80px);
+     opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+}
+
+@keyframes popMenu {
+  0% { transform: translateX(-50%) translateY(-30px) scale(0.95); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+}
+
 
 @media only screen and (max-width: 1080px){
-    .navbx{
+    .nav-1{
         display: none;
     }
-    .toggle{
-        display: block;
+    .header {
+      padding: 0 2.2em;
     }
-     #middle{
+    .navbx {
+     max-width: 420px;
+    }
+
+   .logo img {
+      width: 135px;
+    }
+    #middle{
         width: 100%;
     }
 
@@ -1060,32 +1250,19 @@ form{
    .txt p{
       padding-top: 0px;
     }
-    .foot-picbox img{
-        width: 100%;
-        height: 11vh;
+
+    .footer-box > div{
+      flex: 1 1 180px; /* responsive magic */
+      min-width: 180px;
     }
-    .foot-picbox i{
-       padding: 26px 26px 20px 26px;
-    }
-    .foot-picbox i:hover{
-       align-content: center;
-    }
-    .form1 input{
-       width: 96%;
-       padding: 8.5px 0 8.5px 14px;
-    }
-    #footer-mail{
-      padding: 9px 12px;
-    }
+    
 }
 
-@media only screen and (max-width: 1025.8px){
+@media only screen and (max-width: 1024.8px){
     .img-box{
-      height: 40vh;
+      min-height: auto;
     }
-   .details-picbox{
-      height: 30vh;
-    }
+
    .bx{
       flex-wrap: wrap;
       row-gap: 60px;
@@ -1110,31 +1287,20 @@ form{
     }
 
     .teams-pic img{
-        height: 30vh;
+        height: auto;
     }
 
     .img-bo img{
-        height: 20vh;
-    }
-
-   .footer-bg{
-      height: 39vh;
-    }
-    .foot-picbox img{
-        height: 6.8vh;
-    }
-    .foot-picbox i:hover{
-       height: 6.8vh;
+        height: auto;
     }
 }
 
 @media only screen and (max-width: 980px){
-    .img-bo img{
-        height: 32vh;
+    .box {
+      gap: 8em;
     }
-
     .footer-bg{
-      height: 61.6vh;
+      height: auto;
     }
 
     .footer-box{
@@ -1147,48 +1313,23 @@ form{
     }
 }
 
-@media only screen and (max-width: 900px){
-   .img-box{
-      height: 44vh;
-   }
-   #middle{
-     flex-wrap: wrap;
-     padding: 80px 4em 0 4em;
-   }
-   .pic-box img{
-      width: 100%;
-      height: 600px;
-   }
-}
-
 @media only screen and (max-width: 820.5px){
+    .navbx {
+     max-width: 380px;
+    }
+    #middle{
+        flex-wrap: wrap;
+    }
+    .pic-box img{
+        width: 100%;
+        height: 580px;
+    }
    .service-box{
-    grid-template-columns: repeat(2,1fr);
+     grid-template-columns: repeat(2,1fr);
    }
 
     .teams > div{
         flex: 0 0 calc(50% - 20px);
-    }
-
-    .img-bo img{
-        height: 28vh;
-    }
-
-    .footer-bg{
-        height: 54vh;
-    }
-
-    .foot-picbox img{
-        height: 8vh;
-    }
-
-    .foot-picbox i{
-        padding-left: 3em;
-    }
-
-    .foot-picbox i:hover{
-       width: 32%;
-       height: 8vh;
     }
 
     .footer-box{
@@ -1201,13 +1342,16 @@ form{
 }
 
 @media only screen and (max-width:780px){
-    .details-picbox{
-        height: 44vh;
+    .box {
+      gap: 6em;
+    }
+    .navbx {
+     max-width: 320px;
+    }
+     .pic-box img{
+        height: 480px;
     }
     .details-iconbox{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0px;
         row-gap: 28px;
     }
     .details-iconbox > div{
@@ -1223,23 +1367,46 @@ form{
         max-width: 188px;
         flex: 0 0 calc(60% - 0px);
     }
-    .footer-bg {
-        height: 60vh;
-    }
     .form1 input{
         width: 100%;
     }
 }
 @media only screen and (max-width:641px){
-  .textbox p{
+    .navbx {
+     max-width: 280px;
+    }
+    .nav-arrow {
+     width: 28px;
+     height: 28px;
+    }
+    .nav-arrow i {
+     font-size: 12px;
+    }
+   .textbox p{
       width: 100%;
     }
-    .foot-picbox i{
-        padding-left: 2em;
-    }
-
 }
-@media(max-width:580px){
+@media only screen and (max-width:580px){
+    .header {
+      padding: 0 1.4em;
+    }
+    .logo img {
+      width: 115px;
+    }
+    .nav-slider{
+        gap: 4px;
+    }
+    .navbx {
+     max-width: 260px;
+     padding: 4px 4px;
+    }
+    .box {
+     gap: 4em;
+    }
+    .navbx li a{
+        font-size: 12.6px;
+        padding: 4px 10px;
+    }
     .textbox h2{
         font-size: 28px;
     }
@@ -1247,7 +1414,7 @@ form{
         font-size: 48px;
     }
     .textbox p{
-        top: 32%;
+        top: 38%;
         font-size: 15px;
     }
     .banner-bttn{
@@ -1257,7 +1424,7 @@ form{
         padding: 80px 1.4em 0 1.4em;
     }
     .pic-box img{
-        height: 440px;
+        height: 380px;
     }
     .bx{
         padding: 0 1.4em;
@@ -1272,8 +1439,11 @@ form{
         grid-template-columns: repeat(1,1fr);
         padding: 20px 1.4em;
     }
-    .details-picbox{
-        height: 36vh;
+    .details-iconbox{
+        row-gap: 10px;
+    }
+    .p-classes{
+      display: inline;
     }
     .icon-img{
         height: 44px;
@@ -1293,15 +1463,10 @@ form{
     .teams > div {
         flex: 0 0 calc(100% - 20px);
     }
-    .teams-pic img{
-        height: 26vh;
-    }
+    
     .client-statement .item p{
         font-size: 15px;
         padding: 0 1.8em;
-    }
-    .img-bo img{
-        height: 32vh;
     }
     .item .content h3{
         padding-top: 14px;
@@ -1315,56 +1480,118 @@ form{
     .brands img{
         max-width: 120px;
     }
-    .footer-bg{
-        height: 98vh;
+
+   .footer-box h4, .footer-box p{
+     text-align: center;
+    }
+
+   .footer-box h4::after{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .footer-box > div{
+      flex: 0 0 calc(100% - 20px); /* responsive magic */
+      min-width: 0px;
     }
     .footer-box{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        gap: 28px;
-        padding: 20px 1.4em;
-        align-content: center;
+      justify-content: center;
+      gap: 30px;
+      color: white;
+    }
+
+    .foot-box1 ul{
         text-align: center;
     }
+   
     .Contact-icon li{
        justify-content: center;
     }
     form{
         justify-content: center;
     }
-    .form1 input{
-        width: 100%;
-    }
-    .foot-picbox{
-        padding: 0 4em;
-    }
-    .foot-picbox i:hover{
-        width: 25%;
+    .foot-picbox img {
+        height: 12vh;
     }
 }
-@media(max-width:488.8px){
+@media only screen and (max-width:488.8px){
+    .logo img {
+      width: 100px;
+    }
+    .navbx {
+     max-width: 154px;
+     padding: 4px 2px;
+    }
+    .textbox h1{
+        font-size: 42px;
+        padding-right: 0.2em;
+    }
+    .pic-box img{
+        height: 340px;
+    }
+    .txt h3{
+        font-size: 18px;
+    }
+    .txt h2{
+        font-size: 28px;
+    }
     .p-classes{
       display: inline;
-   }
-    .footer-bg{
-        height: 100vh;
     }
-   .foot-picbox{
-        padding: 0 2em;
+
+    .service-text h2, .latest-text h2, .team-text h2, #latest-blog h2{
+        font-size: 28px;
     }
-    .foot-picbox i:hover{
-        width: 28%;
+   .owl-carousel-two img{
+        height: 380px;
+    }
+    .footer-box h4 {
+        font-size: 18px;
+    }
+    .foot-box4{
+       padding-top: 2em;
+    }
+    .footer-box{
+        gap: 10px;
+    }
+}
+@media only screen and (max-width:430.8px){
+    .textbox p{
+        top: 38%;
+    }
+    .banner-bttn{
+        margin-top: 14em;
+    }
+}
+@media only screen and (max-width:398.8px){
+    .header {
+      padding: 0 1em;
+    }
+    .box {
+        gap: 2em;
+    }
+    .nav-arrow{
+        width: 18px;
+        height: 18px;
+    }
+    .nav-arrow i{
+        font-size: 12px;
+    }
+    .textbox h2{
+       font-size: 22px;
+    }
+    .textbox h1{
+        font-size: 38px;
+    }
+    .textbox p{
+      line-height: 24px;
+    }
+    .banner-bttn{
+        margin-top: 12em;
+        font-size: 14px;
+        padding: 4px 28px;
+    }
+    .owl-carousel-two img{
+        height: 328px;
     }
 }
 
-@media(max-width:388.8px){
-   .footer-box{
-      row-gap: 10px;
-   }
-   .foot-box3 h4{
-     line-height: 8px;
-   }
-   .foot-box4 h4{
-       padding-top: 1em;
-   }
-}
