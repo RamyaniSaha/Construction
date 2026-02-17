@@ -1024,18 +1024,25 @@ form{
        justify-content: center;
     }
 
-    
-
     form{
         justify-content: center;
     }
     .foot-picbox img {
         height: 12vh;
     }
+
+    #totop{
+     padding: 10px 12px;
+     font-size: 15px;
+     right: 34px !important;
+    }
 }
 @media only screen and (max-width:488.8px){
     .logo img {
       width: 100px;
+    }
+    .box {
+      gap: 3.4em;
     }
     .navbx {
      max-width: 154px;
