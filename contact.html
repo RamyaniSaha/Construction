@@ -32,7 +32,7 @@
                  </ul>
              </div>
           </nav>
-           <nav class="header"> 
+           <nav id="mainNav" class="header"> 
               <div class="box">
 
                    <div class="logo">
@@ -81,6 +81,82 @@
   </div>
  <!--Banner ends here-->
 
+ <!--Map section starts here-->
+ <div id="map">
+  <div class="middle-map mt-2">
+    <iframe class="i-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235850.81213211702!2d88.1825342231438!3d22.535343432834757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1771569269173!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+ </div>
+ <!--Map section ends here-->
+
+ <!--Contact section starts here-->
+ <div id="middle">
+  <div class="middle-contact mt-2">
+    <div class="content">
+      <div class="row g-6 justify-center">
+        <div class="col-lg-4 col-12 mb-sm-50 mb-xs-50">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <ul class="contact-info-ul">
+              <li><i class="fa-regular fa-map"></i>
+                <p><span class="con-text1">
+                    Stock Building, 125 Main Street 1st Lane, San Francisco, USA
+                  </span>
+                </p>
+              </li>
+              <li><i class="fa-solid fa-phone"></i>
+                <p>
+                  <span class="con-text">
+                    <a href="">(001) 24568 365 987</a>
+                    <a href="">(001) 65897 569 784</a>
+                  </span>
+                </p>
+              </li>
+              <li><i class="fa-regular fa-envelope"></i>
+                <p>
+                  <span class="con-text">
+                    <a href="">info@example.com</a>
+                    <a href="">www.example.com</a>
+                  </span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-8 col-12">
+          <div class="contact-form mt-2">
+            <h3>Leave Your Message</h3>
+            <form class="contact-forms" id="contact-Forms" action="">
+              <div class="row row-10">
+                <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="name" type="text" placeholder="Your Name">
+                </div>
+                <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="email" type="email" placeholder="Your Email">
+                </div>
+                 <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="subject" type="text" placeholder="Subject">
+                </div>
+
+                <div class="col-12 mb-20">
+                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button class="custom-btn"><a href="#">Send Message</a></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ <!--Contact section ends here-->
+
  <!--Footer starts here-->
   <footer>
         <div class="footer-bg">
@@ -105,18 +181,25 @@
                   <div class="foot-box2">
                         <h4>Contact Us</h4>
                         <ul class="Contact-icon">
-                            <li><a><i class="fa-regular fa-map"></i></a>
-                                <p>256, 1st AVE, Manchester 125 , North England</p>
-                            </li>
-                            <li><a><i class="fa-solid fa-phone"></i></a>
-                                <p><span>+012 345 678 102</span><br>
-                                    <span>+012 345 678 101</span>
+                            <li><i class="fa-regular fa-map"></i>
+                                <p><span class="footspan-text1">
+                                  256, 1st AVE, Manchester 125 , North England</span>
                                 </p>
                             </li>
-                            <li><a><i class="fa-regular fa-envelope"></i></a>
+                            <li><i class="fa-solid fa-phone"></i>
                                 <p>
-                                   <span>info@example.com</span><br>
-                                    <span>www.example.com</span>
+                                  <span class="footspan-text">
+                                    <a href="">+012 345 678 102</a>
+                                    <a href="">+012 345 678 101</a>
+                                  </span>
+                                </p>
+                            </li>
+                            <li><i class="fa-regular fa-envelope"></i>
+                                <p>
+                                  <span class="footspan-text">
+                                    <a href="">info@example.com</a>
+                                    <a href="">www.example.com</a>
+                                  </span>
                                 </p>
                             </li>
                         </ul>
@@ -179,29 +262,31 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
   <script>
-      $(document).ready(function(){
+    $(document).ready(function(){
+     let hasAnimatedBack = false;
 
-          let lastScrollTop = 0;
+     $(window).scroll(function(){
+       let scrollTop = $(this).scrollTop();
 
-         $(window).scroll(function(){
-         let scrollTop = $(this).scrollTop();
+       if(scrollTop > 100){
+          $("#mainNav").addClass("sticky");
+          hasAnimatedBack = false;
+        } 
+       else {
+         $("#mainNav").removeClass("sticky");
 
-         if(scrollTop > 80 && scrollTop > lastScrollTop){
-              $("nav").addClass("sticky").removeClass("unsticky");
-           }
-         else if(scrollTop < lastScrollTop){
-             if(scrollTop <= 80){
-                 $("nav").removeClass("sticky").addClass("unsticky");
-                 setTimeout(function(){
-                 $("nav").removeClass("unsticky");
-               }, 400);
-            }
-          }
+         if(!hasAnimatedBack){
+           $("#mainNav").addClass("return-animate");
 
-          lastScrollTop = scrollTop;
-          });
+           setTimeout(function(){
+             $("#mainNav").removeClass("return-animate");
+          }, 600);
 
-        });
+          hasAnimatedBack = true;
+        }
+      }
+     });
+    })
   </script>
 
   <script>

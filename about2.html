@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+</head>
+
+<style>
+
+     .container{
+       width: 100%;
+       height: auto;
+   }
+   
+   .navbox{
+       display: flex;
+       justify-content: space-between;
+       background-color: rgba(0, 0, 0, 0.780); 
+       padding: 2px 80px;
+       align-items: center;
+   }
+   
+   .nav li{
+       display: inline;
+       color: white;
+       padding: 0 10px;
+       font-size: 12px;
+   }
+   .nav li span{
+       font-size: 14px;
+       padding: 0 6px;
+       font-weight: 500;
+   }
+   .social{
+      position: relative;
+      display: inline-flex;
+      list-style: none;
+      gap: 1.4em;
+      top: 0.4em;
+   }
+   
+   .social li{
+       text-decoration: none;
+       color: white;
+       font-size: 13px;
+   }
+  
+   .nav li:hover{
+       color: rgba(255, 166, 0, 0.911);
+       cursor: pointer;
+   }
+   .nav span1 li:hover{
+       color: white;
+       cursor:auto;
+   }
+   .social li:hover{
+       color: rgba(255, 166, 0, 0.911);
+       cursor: pointer;
+   }
+    /* ===== NAV BASE ===== */
+#mainNav {
+  width: 100%;
+  position: relative;
+  transition: 0.4s ease;
+  z-index: 999;
+}
+
+.box {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0; /* compact height */
+  gap: 20px;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+  width: 130px;
+}
+
+/* ===== NAV SLIDER ===== */
+.nav-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* ===== GLASS UL ===== */
+.navbx {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 6px 8px;
+  border-radius: 50px;
+
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.08);
+
+  max-width: 620px;
+}
+
+.navbx::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== LINKS ===== */
+.navbx li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+  white-space: nowrap;
+
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: 0.3s ease;
+}
+
+.navbx li a:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.4);
+}
+
+.navbx li a.active {
+  background: linear-gradient(135deg,#ff4b2b,#ff416c);
+  color: #fff;
+  border: none;
+}
+
+/* ===== ARROWS ===== */
+.nav-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.35);
+
+  transition: 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: linear-gradient(135deg,#ff4b2b,#ff416c);
+}
+
+.nav-arrow:hover i {
+  color: #fff;
+}
+
+.nav-arrow i {
+  font-size: 15px;
+  color: #111;
+  transition: 0.3s;
+}
+
+/* ===== STICKY STATE ===== */
+#mainNav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== ORIGINAL RETURN ANIMATION (ONLY ONCE) ===== */
+#mainNav.return-animate {
+  animation: returnNav 0.6s ease forwards;
+}
+
+@keyframes returnNav {
+  from {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+  .box{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-slider{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbx{
+    max-width: 100%;
+  }
+}
+.banner{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.banner-img{
+  width: 100%;
+  min-height: 280px;
+  position: relative;
+  background-image: url("../images/funfact-bg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.banner-txt{
+  text-align: center;
+  margin: auto;
+}
+
+.banner-txt h1{
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.page-breadcrumb{
+  margin: 15px auto 0 auto;
+  padding: 0;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.6em;
+}
+
+.page-breadcrumb li, .page-breadcrumb li a{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-family: "Oswald", sans-serif;
+  line-height: 2;
+}
+
+.page-breadcrumb li a:hover{
+  color: rgb(252, 188, 70);
+}
+
+.page-breadcrumb i{
+  font-size: 12px;
+  margin-right: 0.3em;
+}
+
+.page-breadcrumb li a::after {
+  content: "-";
+  margin: 0 6px;
+}
+
+.page-breadcrumb li a:hover::after{
+  color: white;
+}
+
+.middle-map{
+ width: 100%;
+ height: auto;
+ padding: 3.2em 3em;
+}
+
+.i-map{
+  width: 100%;
+  height: 380px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 10px 2px #00000097;
+}
+
+.middle-contact{
+  padding: 0 3.2em;
+}
+
+.contact-info h3{
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1F2D30;
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 1.6em;
+}
+
+.contact-info ul{
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.contact-info li{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-info i{
+  margin-top: 0.2em;
+  color: #666666;
+  font-size: 20px;
+}
+
+.con-text1{
+  display: block;
+  line-height: 24px;
+  max-width: 230px;
+}
+
+.con-text a{
+  display: block;
+  line-height: 24px;
+  max-width: 230px;
+}
+
+.contact-info p, .contact-info p a{
+  font-family: "Open sans", sans-serif;
+  color: #666666;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.4s ease-in;
+}
+
+.contact-info p a:hover{
+  color: #fab702;
+}
+
+.row-10{
+  row-gap: 20px;
+}
+
+.contact-form h3{
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1F2D30;
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 1.6em;
+}
+
+.contact-forms input{
+  width: 100%;
+  height: 50px;
+  font-family: "Open sans", sans-serif;
+  font-size: 15px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: #666666;
+}
+
+.contact-forms textarea{
+  width: 100%;
+  height: 120px;
+  font-family: "Open sans", sans-serif;
+  font-size: 15px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #666666;
+  resize: none;
+}
+
+.custom-btn{
+  width: auto;
+  height: 50px;
+  border: 2px solid #fab702;
+  background-color: #fab702;
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.4s ease-in;
+}
+
+.custom-btn a{
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-family: "Open sans", sans-serif;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.custom-btn:hover{
+  border: 2px solid #fab702;
+  background-color: transparent;
+}
+
+.custom-btn:hover a{
+  color: black;
+}
+
+footer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 80px;
+}
+.footer-bg{
+    width: 100%;
+    height: auto;
+    background-image: url("../images/footer-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer-overlay{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.836);
+    padding: 68px 0 20px 0;  /* controls footer height */
+}
+
+.footer-box{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* makes responsive automatically */
+    justify-content: space-between;
+    gap: 30px;
+    color: white;
+}
+
+/* All Footer Columns */
+.footer-box > div{
+    flex: 1 1 220px; /* responsive magic */
+    min-width: 220px;
+}
+
+.footer-box h4{
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+}
+
+.footer-box h4::after{
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+.footer-box p{
+    font-size: 15px;
+    line-height: 26px;
+    color: #d8d8d8;
+    font-family: "Open Sans", sans-serif;
+}
+
+.foot-box1 ul{
+    padding-left: 0;
+}
+.foot-box1 ul li{
+    list-style: none;
+    display: inline-flex;
+}
+.foot-box1 ul li i{
+    letter-spacing: 16px;
+    font-size: 14px;
+}
+.foot-box1 ul li i:hover{
+    color: rgb(252, 188, 70);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.Contact-icon{
+    color: #d8d8d8 !important;
+    padding-left: 0;
+}
+.Contact-icon li{
+    display: flex;
+    list-style: none;
+    line-height: 20px;
+}
+.Contact-icon li i{
+    margin-top: 0.4em;
+    font-size: 14px;
+    letter-spacing: 14px;
+}
+.Contact-icon li p{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+}
+
+.Contact-icon li a{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.Contact-icon li a:hover{
+    color: rgb(252, 188, 70);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.footspan-text1{
+  display: block;
+}
+
+.footspan-text{
+  display: block;
+  max-width: 140px;
+}
+
+.foot-picbox{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.foot-picbox div{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.foot-picbox img{
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
+}
+.foot-picbox div:hover img{
+    transform: scale(1.1);
+}
+
+.foot-picbox i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: rgb(252, 188, 70);
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 2;
+}
+.foot-picbox div:hover i{
+   background-color: rgba(39, 39, 39, 0.623);
+   padding: 10em;
+   opacity: 1;
+   cursor: pointer;
+}
+.foot-box1 h4::after{
+    content: "";
+    width: 82px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+.foot-box3 h4::after{
+    content: "";
+    width: 140px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+form{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.form1 input{
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid rgba(117, 117, 117, 0.993);
+    background-color: transparent;
+    line-height: 24px;
+    font-weight: 400;
+    outline: none;
+    color: white;
+}
+#footer-mail{
+    padding: 11px 14px;
+    border: 1px solid black;
+    border: none;
+    display: inline;
+    position: absolute;
+    background-color: #fab702;
+}
+.fa-paper-plane{
+    color: white;
+    font-size: 14px
+}
+#footer-mail:hover{
+    cursor: pointer;
+}
+.footer-margin{
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+}
+.footer-copyright{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.foot-text p{
+    font-size: 15px;
+    color: #d8d8d8;
+    text-align: center;
+    font-weight: 400;
+    word-spacing: 2px;
+    font-family: "Open Sans", sans-serif;
+}
+.foot-text p span:hover{
+    color: #fab702;
+    cursor: pointer;
+}
+#totop{
+    padding: 11px 14px;
+    border-radius: 6%;
+    background-color: transparent;
+    color: #fab702;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    position: fixed;
+    right: 58px !important;
+    bottom: 58px;
+    z-index: 9999;
+}
+#totop:hover{
+  background-color: #fab702;
+  color: white;
+  transition: 0.3s ease;
+}
+</style>
+
+<body>
+
+    <!--Header starts here-->
+   <header>
+        <section casss="container">
+          <nav class="nav-1">
+             <div class="navbox">
+                 <ul class="nav">
+                     <span1><li><i class="fa-regular fa-clock"></i><span>7.30 AM - 9.30 PM</span></li></span1>
+                     <li><i class="fa-solid fa-phone"></i><span>(001) 25465 258 369</span></li>
+                 </ul>
+                 <ul class="social">
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-linkedin-in"></i></li>
+                    <li><i class="fa-brands fa-pinterest-p"></i></li>
+                    <li><i class="fa-brands fa-google-plus-g"></i></li>
+                 </ul>
+             </div>
+          </nav>
+           <nav id="mainNav"> 
+  <div class="box">
+
+    <div class="logo">
+      <a href="#"><img src="images/logo-dark.webp"></a>
+    </div>
+
+    <div class="nav-slider">
+
+      <button class="nav-arrow left">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+
+      <ul class="navbx">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="service.html"><i class="fa-solid fa-gear"></i> Service</a></li>
+        <li><a href="project.html"><i class="fa-solid fa-briefcase"></i> Project</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-blog"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <button class="nav-arrow right">
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+          </nav>
+
+      </section>
+   </header>
+ <!--Header ends here-->
+
+ <!--Banner starts here-->
+  <div class="banner">
+    <div class="banner-img">
+      <div class="overlay"></div>
+      <div class="banner-txt">
+        <h1>Contact</h1>
+        <ul class="page-breadcrumb">
+          <li><a href="./index.html">Home</a></li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ <!--Banner ends here-->
+
+ <!--Map section starts here-->
+ <div id="map">
+  <div class="middle-map mt-2">
+    <iframe class="i-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235850.81213211702!2d88.1825342231438!3d22.535343432834757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1771569269173!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+ </div>
+ <!--Map section ends here-->
+
+ <!--Contact section starts here-->
+ <div id="middle">
+  <div class="middle-contact mt-2">
+    <div class="content">
+      <div class="row g-6 justify-center">
+        <div class="col-lg-4 col-12 mb-sm-50 mb-xs-50">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <ul class="contact-info-ul">
+              <li><i class="fa-regular fa-map"></i>
+                <p><span class="con-text1">
+                    Stock Building, 125 Main Street 1st Lane, San Francisco, USA
+                  </span>
+                </p>
+              </li>
+              <li><i class="fa-solid fa-phone"></i>
+                <p>
+                  <span class="con-text">
+                    <a href="">(001) 24568 365 987</a>
+                    <a href="">(001) 65897 569 784</a>
+                  </span>
+                </p>
+              </li>
+              <li><i class="fa-regular fa-envelope"></i>
+                <p>
+                  <span class="con-text">
+                    <a href="">info@example.com</a>
+                    <a href="">www.example.com</a>
+                  </span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-8 col-12">
+          <div class="contact-form mt-2">
+            <h3>Leave Your Message</h3>
+            <form class="contact-forms" id="contact-Forms" action="">
+              <div class="row row-10">
+                <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="name" type="text" placeholder="Your Name">
+                </div>
+                <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="email" type="email" placeholder="Your Email">
+                </div>
+                 <div class="col-md-4 col-12 mb-20">
+                  <input class="form-input" name="subject" type="text" placeholder="Subject">
+                </div>
+
+                <div class="col-12 mb-20">
+                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button class="custom-btn"><a href="#">Send Message</a></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ <!--Contact section ends here-->
+
+ <!--Footer starts here-->
+  <footer>
+        <div class="footer-bg">
+            <div class="footer-overlay">
+                <div class="footer-box">
+                    <div class="foot-box1">
+                      <h4>About Us</h4>
+                      <p>Koncrete - Construction Bootstrap 5
+                        Templatethe best theme for elit, sed
+                        do to eiumod tempor dolor sit amet, 
+                        ctetur adipiscing elit seddo dolor sit 
+                        amet.
+                      </p>
+                      <ul>
+                        <li><a><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a><i class="fa-brands fa-google-plus-g"></i></a></li>
+                        <li><a><i class="fa-brands fa-pinterest-p"></i></a></li>
+                      </ul>
+                    </div>
+                  <div class="foot-box2">
+                        <h4>Contact Us</h4>
+                        <ul class="Contact-icon">
+                            <li><i class="fa-regular fa-map"></i>
+                                <p><span class="footspan-text1">
+                                  256, 1st AVE, Manchester 125 , North England</span>
+                                </p>
+                            </li>
+                            <li><i class="fa-solid fa-phone"></i>
+                                <p>
+                                  <span class="footspan-text">
+                                    <a href="">+012 345 678 102</a>
+                                    <a href="">+012 345 678 101</a>
+                                  </span>
+                                </p>
+                            </li>
+                            <li><i class="fa-regular fa-envelope"></i>
+                                <p>
+                                  <span class="footspan-text">
+                                    <a href="">info@example.com</a>
+                                    <a href="">www.example.com</a>
+                                  </span>
+                                </p>
+                            </li>
+                        </ul>
+                  </div>
+                   <div class="foot-box3">
+                      <h4>Instagram Feed</h4>
+                      <div class="foot-pic">
+                          <div class="foot-picbox">
+                               <div class="foot-picbox1">
+                                   <i class="fa-brands fa-instagram"></i><img src="images/project-1.webp">
+                               </div>
+                               <div class="foot-picbox2">
+                                 <i class="fa-brands fa-instagram"></i><img src="images/project-2.webp">
+                               </div>
+                               <div class="foot-picbox3">
+                                  <i class="fa-brands fa-instagram"></i><img src="images/project-3.webp">
+                               </div>
+                               <div class="foot-picbox4">
+                                  <i class="fa-brands fa-instagram"></i><img src="images/project-4.webp">
+                               </div>
+                               <div class="foot-picbox5">
+                                  <i class="fa-brands fa-instagram"></i><img src="images/project-5.webp">
+                               </div>
+                               <div class="foot-picbox6">
+                                <i class="fa-brands fa-instagram"></i><img src="images/project-6.webp">
+                               </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="foot-box4">
+                      <h4>Newsletter</h4>
+                      <p>Subscribe our newsletter and get all
+                        latest news about our latest
+                        properties, promotions, offers and
+                        discount.
+                     </p>
+                     <form>
+                        <div class="form1">
+                            <input type="email" id="email" placeholder="Email Here..">
+                            <button id="footer-mail"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                     </form>
+                  </div>
+              </div>
+              <div class="footer-margin">
+                <div class="footer-copyright">
+                    <div class="foot-text">
+                        <p>Copyright ©2021 <span> Koncrete</span>. All rights reserved.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+  </footer>
+ <!--Footer ends here-->
+
+  <button onclick="backToTop()" id="totop"><i class="fa-solid fa-chevron-up"></i></button>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+
+  let hasAnimatedBack = false;
+
+  $(window).scroll(function(){
+    let scrollTop = $(this).scrollTop();
+
+    if(scrollTop > 100){
+      $("#mainNav").addClass("sticky");
+      hasAnimatedBack = false;
+    } 
+    else {
+      $("#mainNav").removeClass("sticky");
+
+      if(!hasAnimatedBack){
+        $("#mainNav").addClass("return-animate");
+
+        setTimeout(function(){
+          $("#mainNav").removeClass("return-animate");
+        }, 600);
+
+        hasAnimatedBack = true;
+      }
+    }
+  });
+
+  // Arrow scroll
+  $(".nav-arrow.right").click(function(){
+    $(".navbx").animate({
+      scrollLeft: $(".navbx").scrollLeft() + 200
+    }, 400);
+  });
+
+  $(".nav-arrow.left").click(function(){
+    $(".navbx").animate({
+      scrollLeft: $(".navbx").scrollLeft() - 200
+    }, 400);
+  });
+
+});
+</script>
+
+  <script>
+         let totop = document.getElementById("totop");
+    window.addEventListener("scroll", () => {
+      if(document.body.scrollTop >100 || document.documentElement.scrollTop >100){
+        totop.style= "display:blck";
+      }else{
+        totop.style= "display:none";
+      }
+    })
+
+    let backToTop = ()=>{
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+    
+</body>
+</html>

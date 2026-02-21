@@ -44,11 +44,11 @@
                        </button>
 
                        <ul class="navbx">
-                           <li><a href="" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                           <li><a href="" class="home-link active"><i class="fa-solid fa-house"></i> Home</a></li>
                            <li><a href="./about.html"><i class="fa-solid fa-user"></i> About</a></li>
                            <li><a href="./service.html"><i class="fa-solid fa-gear"></i> Service</a></li>
                            <li><a href="./project.html"><i class="fa-solid fa-briefcase"></i> Project</a></li>
-                           <li><a href="#latest-blog"><i class="fa-solid fa-blog"></i> Blog</a></li>
+                           <li><a href="#latest-blog" class="blog-link"><i class="fa-solid fa-blog"></i> Blog</a></li>
                            <li><a href="./contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
                       </ul>
 
@@ -849,6 +849,78 @@
       document.documentElement.scrollTop = 0;
     }
     </script>
+
+    <script>
+     $(document).ready(function(){
+
+       let currentPage = window.location.pathname.split("/").pop();
+
+       // If user is on homepage
+      if(currentPage == "" || currentPage == "index.html"){
+
+        // Default active Home
+        $(".navbx a").removeClass("active");
+        $(".home-link").addClass("active");
+
+        $(window).on("scroll", function(){
+
+            let scrollPos = $(document).scrollTop();
+            let blogTop = $("#latest-blog").offset().top - 200;
+            let blogBottom = blogTop + $("#latest-blog").outerHeight();
+
+            // Show/Hide Back to Top
+            if(scrollPos > 300){
+                $(".back-to-top").fadeIn();
+            } else {
+                $(".back-to-top").fadeOut();
+            }
+
+            // Blog active when blog section visible
+            if(scrollPos >= blogTop && scrollPos < blogBottom){
+                $(".navbx a").removeClass("active");
+                $(".blog-link").addClass("active");
+            }
+            else{
+                // If not in blog section, Home active again
+                $(".navbx a").removeClass("active");
+                $(".home-link").addClass("active");
+            }
+
+        });
+
+        // When clicking blog link (jump link)
+        $(".blog-link").click(function(){
+            $(".navbx a").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // Back to top click
+        $(".back-to-top").click(function(e){
+            e.preventDefault();
+
+            $("html, body").animate({scrollTop: 0}, 700);
+
+            $(".navbx a").removeClass("active");
+            $(".home-link").addClass("active");
+        });
+
+      }
+      else{
+        // For other pages: active by URL
+        $(".navbx a").removeClass("active");
+        $(".navbx a").each(function(){
+            let link = $(this).attr("href");
+
+            if(link == currentPage){
+                $(this).addClass("active");
+            }
+        });
+       }
+
+     });
+    </script>
+
+  
     
 </body>
 </html>
