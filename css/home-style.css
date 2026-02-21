@@ -59,7 +59,7 @@
        color: rgba(255, 166, 0, 0.911);
        cursor: pointer;
    }
-   .header {
+   #mainNav {
       width: 100%;
       position: relative;
       transition: 0.4s ease;
@@ -67,7 +67,7 @@
     }
 
     /* Sticky class (will be added by jQuery) */
-    .header.sticky {
+    #mainNav.sticky {
       position: fixed;
       top: 0;
       left: 0;
@@ -84,8 +84,8 @@
       z-index: 99999;
     }
 
-    .header.unsticky {
-       animation: slideUp 0.45s ease;
+    #mainNav.return-animate {
+     animation: returnNav 0.6s ease forwards;
     }
 
     
@@ -1031,6 +1031,7 @@ footer{
     line-height: 20px;
 }
 .Contact-icon li i{
+    margin-top: 0.4em;
     font-size: 14px;
     letter-spacing: 14px;
 }
@@ -1039,10 +1040,27 @@ footer{
     font-weight: 400;
     font-family: "Open Sans", sans-serif;
 }
-.Contact-icon li p span:hover{
+.Contact-icon li a{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.Contact-icon li a:hover{
     color: rgb(252, 188, 70);
     cursor: pointer;
     transition: 0.5s ease;
+}
+
+.footspan-text1{
+  display: block;
+}
+
+.footspan-text{
+  display: block;
+  max-width: 140px;
 }
 
 .foot-picbox{
@@ -1197,14 +1215,14 @@ form{
     }
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(0px);
-    opacity: 1;
+@keyframes returnNav {
+   from {
+    transform: translateY(-70px);
+    opacity: 0;
   }
   to {
-    transform: translateY(-90px);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -1524,7 +1542,7 @@ form{
       width: 100px;
     }
     .box {
-      gap: 3.4em;
+      gap: 3em;
     }
     .navbx {
      max-width: 154px;

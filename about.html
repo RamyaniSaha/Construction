@@ -31,7 +31,7 @@
                  </ul>
              </div>
           </nav>
-           <nav class="header"> 
+           <nav id="mainNav" class="header"> 
               <div class="box">
 
                    <div class="logo">
@@ -71,10 +71,6 @@
       <div class="overlay"></div>
       <div class="banner-txt">
         <h1>About Us</h1>
-        <ul class="page-breadcrumb">
-          <li><a href="./index.html">Home</a></li>
-          <li>About Us</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -196,19 +192,26 @@
                     </div>
                   <div class="foot-box2">
                         <h4>Contact Us</h4>
-                        <ul class="Contact-icon">
-                            <li><a><i class="fa-regular fa-map"></i></a>
-                                <p>256, 1st AVE, Manchester 125 , North England</p>
-                            </li>
-                            <li><a><i class="fa-solid fa-phone"></i></a>
-                                <p><span>+012 345 678 102</span><br>
-                                    <span>+012 345 678 101</span>
+                         <ul class="Contact-icon">
+                            <li><i class="fa-regular fa-map"></i>
+                                <p><span class="footspan-text1">
+                                  256, 1st AVE, Manchester 125 , North England</span>
                                 </p>
                             </li>
-                            <li><a><i class="fa-regular fa-envelope"></i></a>
+                            <li><i class="fa-solid fa-phone"></i>
                                 <p>
-                                   <span>info@example.com</span><br>
-                                    <span>www.example.com</span>
+                                  <span class="footspan-text">
+                                    <a href="">+012 345 678 102</a>
+                                    <a href="">+012 345 678 101</a>
+                                  </span>
+                                </p>
+                            </li>
+                            <li><i class="fa-regular fa-envelope"></i>
+                                <p>
+                                  <span class="footspan-text">
+                                    <a href="">info@example.com</a>
+                                    <a href="">www.example.com</a>
+                                  </span>
                                 </p>
                             </li>
                         </ul>
@@ -272,29 +275,31 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
   <script>
-      $(document).ready(function(){
+       $(document).ready(function(){
+     let hasAnimatedBack = false;
 
-          let lastScrollTop = 0;
+     $(window).scroll(function(){
+       let scrollTop = $(this).scrollTop();
 
-         $(window).scroll(function(){
-         let scrollTop = $(this).scrollTop();
+       if(scrollTop > 80){
+          $("#mainNav").addClass("sticky");
+          hasAnimatedBack = false;
+        } 
+       else {
+         $("#mainNav").removeClass("sticky");
 
-         if(scrollTop > 80 && scrollTop > lastScrollTop){
-              $("nav").addClass("sticky").removeClass("unsticky");
-           }
-         else if(scrollTop < lastScrollTop){
-             if(scrollTop <= 80){
-                 $("nav").removeClass("sticky").addClass("unsticky");
-                 setTimeout(function(){
-                 $("nav").removeClass("unsticky");
-               }, 400);
-            }
-          }
+         if(!hasAnimatedBack){
+           $("#mainNav").addClass("return-animate");
 
-          lastScrollTop = scrollTop;
-          });
+           setTimeout(function(){
+             $("#mainNav").removeClass("return-animate");
+          }, 600);
 
-        });
+          hasAnimatedBack = true;
+        }
+      }
+     });
+    })
   </script>
 
   <script>
